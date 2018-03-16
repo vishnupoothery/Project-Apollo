@@ -6,9 +6,18 @@
  * Made By MaterializeCSS.com
  */
 
+nav ul a,
+nav .brand-logo {
+  color: #000;
+}
+
 .icon-block {
   padding: 0 15px;
 }
 .icon-block .material-icons {
 	font-size: inherit;
+}
+
+.uppercase{
+    text-transform: uppercase;
 }
