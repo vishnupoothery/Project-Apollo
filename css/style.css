@@ -21,3 +21,8 @@ nav .brand-logo {
 .uppercase{
     text-transform: uppercase;
 }
+
+.container{
+    padding-left: 10px;
+    padding-right: 10px;
+}
