@@ -17,7 +17,14 @@
         <script type="text/javascript">
             (function(){
                 emailjs.init("user_V92IPjtB2oUDazgkufIk5");
+        //        emailjs.send("vishnu_fernweh", "booking", {})
+         //       emailjs.send("vishnu_fernweh", "booking", {name : "Vishnu Poothery", email : "vishnupoothery@gmai.com", number :"9249947415"})
+                document.getElementById("click").onclick = sendMail;
             })();
+            function sendMail(){
+             //   emailjs.send("vishnu_fernweh", "booking", {name : document.getElementById("name"), email : document.getElementById("email"), number : document.getElementById("number")});
+                emailjs.send("vishnu_fernweh", "booking", {name : "Vishnu Poothery", email : "vishnupoothery@gmai.com", number :"9249947415"});
+            }
         </script>
     </head>
     <body>
@@ -76,13 +83,14 @@
                 <h4><bold>CONTACT FORM</bold></h4>
                 <div class="row">
                     <div class="col l9 m9 s12 z-depth-3" style="padding-bottom: 5px">
-                        <form method="post" action="#">
+                        <form method="POST" action="mail.php">
                             <input type="text" id="name" placeholder="Enter your name">
                             <input type="text" id="number" placeholder="Enter your contact number">
                             <input type="email" id="email" placeholder="Enter your email address">
                             <input type="hidden" id="dest" value="jaisalmer">
 
-                            <input class="waves-effect waves-light btn" type="submit" value="SUBMIT" onclick="sendMail();">
+                            <input class="waves-effect waves-light btn" type="submit" value="SUBMIT" onclick="return sendMail();">
+                            <button onclick="sendMail()" id="click">Click Heres</button>
                         </form>
                     </div>
                 </div>
@@ -119,9 +127,7 @@ Made by <a class="orange-text text-lighten-3" href="http://github.com/vishnupoot
         </script>
 
         <script>
-            function sendMail(){
-                emailjs.send("vishnu_fernweh","template_vZCHqO24",{name: "James", notes: "Check this out!"});
-            }
+
             function myMap() {
                 var mapOptions = {
                     center: new google.maps.LatLng(26.9157, 70.9083),
