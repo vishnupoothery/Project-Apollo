@@ -12,12 +12,24 @@
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
         <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+        <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function(){
+                emailjs.init("user_MnlehDhTkdUUM2rMbUbvR");
+
+                document.getElementById("click").onclick = sendMail;
+            })();
+            function sendMail(){
+                emailjs.send("rahul_fernweh", "booking", {name : document.getElementById("name").value, email : document.getElementById("email").value, number : document.getElementById("number").value, dest : document.getElementById("dest").value});
+            }
+        </script>
     </head>
     <body>
         <div class="navbar-fixed">
             <nav class="white" role="navigation">
                 <div class="nav-wrapper container">
-                    <a href="index.html" class="brand-logo"><img style="margin: 2px" class="responsive-img" src="../img/logo_transparent.png"></a>
+                    <a href="../index.html" class="brand-logo"><img style="margin: 2px" class="responsive-img" src="../img/logo_transparent.png"></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="badges.html">About</a></li>
                     </ul>
@@ -85,14 +97,14 @@
                 <h4><bold>CONTACT FORM</bold></h4>
                 <div class="row">
                     <div class="col l9 m9 s12 z-depth-3" style="padding-bottom: 5px">
-                        <form method="post" action="#">
+                        
                             <input type="text" id="name" placeholder="Enter your name">
                             <input type="text" id="number" placeholder="Enter your contact number">
                             <input type="email" id="email" placeholder="Enter your email address">
                             <input type="hidden" id="dest" value="allapuzha">
 
-                            <input class="waves-effect waves-light btn" type="submit" value="SUBMIT">
-                        </form>
+                            <input class="waves-effect waves-light btn" type="submit" value="SUBMIT" onclick="return sendMail();">
+                        
                     </div>
                 </div>
                 <h4><bold>POLICIES</bold></h4>

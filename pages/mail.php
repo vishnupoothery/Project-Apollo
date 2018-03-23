@@ -1,6 +1,6 @@
-
-
-<script type="text/javascript">
+<html>
+<head>
+    <script type="text/javascript">
     (function(){
         emailjs.init("user_V92IPjtB2oUDazgkufIk5");
         //        emailjs.send("vishnu_fernweh", "booking", {})
@@ -10,3 +10,7 @@
     })();
 
 </script>
+    
+    </head>
+</html>
+
